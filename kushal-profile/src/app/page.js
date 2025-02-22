@@ -6,15 +6,17 @@ export default function Home() {
   
   const projects = [
     {
-      title: 'Project One',
-      description: 'A modern web application built with React and Node.js.',
-      image: '/project1.jpg',
-      link: 'https://example.com/project1',
+      title: 'Molarity',
+      description: 'This platform is a Next.js web application where people can upload details of underprivileged individuals to connect them with registered NGOs for support and assistance.',
+      image: '/Molarity.png',
+      link: 'https://molarity.vercel.app/',
+      // link: 'https://example.com/project1',
     },
     {
-      title: 'Project Two',
-      description: 'An innovative e-commerce platform.',
-      image: '/project2.jpg',
+      title: 'The OG Gift Shop',
+      description: 'This platform is a Next.js web application where people can buy gifts for their loved ones',
+      // description: 'An innovative e-commerce platform.',
+      image: '/gift.png',
       link: 'https://example.com/project2',
     },
     {
@@ -49,7 +51,7 @@ export default function Home() {
         </ul>
         
       </nav>
-        <h1 className={styles.title}>Kushal Rastogi</h1>
+        <h1 className={styles.title1}>Kushal Rastogi</h1>
         <h2 className={styles.subtitle}>Full Stack Developer</h2>
         <h3 className={styles.description}>
           I am a full stack developer building scalable web applications.
@@ -58,6 +60,10 @@ export default function Home() {
         <h2 className={styles.subtitle}>Algorithm Engineer & Competitive Programmer </h2>
         <h3 className={styles.description}> Experienced in designing and optimizing real-world algorithms as an Algorithm Engineer,
          while excelling in solving complex problems quickly through competitive programming using Java.</h3>
+         <h2 className={styles.subtitle}>Algorithm Engineer & Competitive Programmer </h2>
+        <h3 className={styles.description}> Experienced in designing and optimizing real-world algorithms as an Algorithm Engineer,
+         while excelling in solving complex problems quickly through competitive programming using Java.</h3>
+        <div className={styles.image}></div>
         <div className={styles.image}>
           <Image
             src="/kushal.jpg"
@@ -74,10 +80,12 @@ export default function Home() {
           <h4 className={styles.description}>Developer Name : Kushal Rastogi</h4>
           <h4 className={styles.description}>Link: <a href="www.google.com">Vercel</a> </h4>
       </nav> */}
-
+      <h3 className={styles.titleProject}>Projects</h3>
+          <p className={styles.introProject}>
+            Here are some of the projects I have worked on.</p>
         
        <section className={styles.sectionProject}>
-    
+          
       <div className={styles.containerProject}>
         {/* <h2 className={styles.titleProject}>My Projects</h2> */}
         <div className={styles.gridProject}>
