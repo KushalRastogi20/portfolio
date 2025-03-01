@@ -1,117 +1,73 @@
+"use client";
 import Image from "next/image";
+import { motion } from "framer-motion";
 import styles from "./page.module.css";
-// import Link from "next/link";
 
 export default function Home() {
-  
   const projects = [
     {
-      title: 'Molarity',
-      description: 'This platform is a Next.js web application where people can upload details of underprivileged individuals to connect them with registered NGOs for support and assistance.',
-      image: '/Molarity.png',
-      link: 'https://molarity.vercel.app/',
-      // link: 'https://example.com/project1',
+      title: "Molarity",
+      description: "A platform connecting underprivileged individuals with NGOs.",
+      image: "/Molarity.png",
+      link: "https://molarity.vercel.app/",
     },
     {
-      title: 'The OG Gift Shop',
-      description: 'This platform is a Next.js web application where people can buy gifts for their loved ones',
-      // description: 'An innovative e-commerce platform.',
-      image: '/gift.png',
-      link: 'https://example.com/project2',
-    },
-    {
-      title: 'Project Three',
-      description: 'A responsive portfolio website.',
-      image: '/project3.jpg',
-      link: 'https://example.com/project3',
-    },
-    {
-      title: 'Project Four',
-      description: 'A real-time chat application.',
-      image: '/project4.jpg',
-      link: 'https://example.com/project4',
-    },
-    {
-      title: 'Project Five',
-      description: 'An AI-powered analytics dashboard.',
-      image: '/project5.jpg',
-      link: 'https://example.com/project5',
+      title: "The OG Gift Shop",
+      description: "A Next.js platform to buy gifts.",
+      image: "/gift.png",
+      link: "https://example.com/project2",
     },
   ];
-  return (
-    <div className={styles.main}>
-      <nav className={styles.nav}>
-        {/* <h1 className={styles.title}>Kushal Rastogi</h1>   */}
-        <ul className={styles.navList}>
-          {/* <li className={styles.navItem}>Kushal Rastogi</li> */}
-          <li className={styles.navItem}>About</li>
-          <li className={styles.navItem}>Projects</li>
-          <li className={styles.navItem}>Skills</li>
-          <li className={styles.navItem}>Contact</li>
-        </ul>
-        
-      </nav>
-        <h1 className={styles.title1}>Kushal Rastogi</h1>
-        <h2 className={styles.subtitle}>Full Stack Developer</h2>
-        <h3 className={styles.description}>
-          I am a full stack developer building scalable web applications.
-         I have worked on various technologies like Next, React, Node, Express, MongoDB, etc.
-         </h3>
-        <h2 className={styles.subtitle}>Algorithm Engineer & Competitive Programmer </h2>
-        <h3 className={styles.description}> Experienced in designing and optimizing real-world algorithms as an Algorithm Engineer,
-         while excelling in solving complex problems quickly through competitive programming using Java.</h3>
-         <h2 className={styles.subtitle}>Algorithm Engineer & Competitive Programmer </h2>
-        <h3 className={styles.description}> Experienced in designing and optimizing real-world algorithms as an Algorithm Engineer,
-         while excelling in solving complex problems quickly through competitive programming using Java.</h3>
-        <div className={styles.image}></div>
-        <div className={styles.image}>
-          <Image
-            src="/kushal.jpg"
-            alt="Kushal Rastogi"
-            width={200}
-            height={200}
-            className={styles.image}
-          />
-        </div>
-        {/* <h2 className={styles.subtitle2}>Projects</h2> */}
-        {/* <h3 className={styles.description}>1. <a href="www.google.com">Project 1</a></h3> */}
-        {/* <nav className={styles.navList}>
-          <h3 className={styles.description}>1. Project 1</h3>
-          <h4 className={styles.description}>Developer Name : Kushal Rastogi</h4>
-          <h4 className={styles.description}>Link: <a href="www.google.com">Vercel</a> </h4>
-      </nav> */}
-      <h3 className={styles.titleProject}>Projects</h3>
-          <p className={styles.introProject}>
-            Here are some of the projects I have worked on.</p>
-        
-       <section className={styles.sectionProject}>
-          
-      <div className={styles.containerProject}>
-        {/* <h2 className={styles.titleProject}>My Projects</h2> */}
-        <div className={styles.gridProject}>
-          {projects.map((project, index) => (
-            <a
-              key={index}
-              href={project.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.cardProject}
-            >
-              <Image
-                src={project.image}
-                alt={project.title}
-                width={400}
-                height={250}
-                className={styles.imageProject}
-              />
-              <h3 className={styles.projectTitle}>{project.title}</h3>
-              <p className={styles.descriptionProject}>{project.description}</p>
-            </a>
-          ))}
-        </div>
-      </div>
-    </section>
 
+  return (
+    <div className={styles.heroContainer}>
+      {/* Navbar */}
+      <motion.nav className={styles.navbar} initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1 }}>
+        <ul>
+          <li>About</li>
+          <li>Projects</li>
+          <li>Skills</li>
+          <li>Contact</li>
+        </ul>
+      </motion.nav>
+
+      {/* Hero Section */}
+      <motion.div className={styles.heroContent} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1 }}>
+        <p className={styles.tagline}>DYNAMIC WEB MAGIC WITH NEXT.JS</p>
+        <h1 className={styles.heroTitle}>
+          Transforming Concepts into <br />
+          <span className={styles.highlight}>Seamless User Experiences</span>
+        </h1>
+        <p className={styles.subtitle}>Hi! I'm Kushal Rastogi, a Next.js Developer based in Russia</p>
+        <motion.button className={styles.ctaButton} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+          See my work →
+        </motion.button>
+      </motion.div>
+
+      {/* About Section */}
+      <div className={styles.aboutGrid}>
+        <motion.div className={styles.imageProfile} initial={{ x: -50, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ duration: 1 }}>
+          <div className={styles.imageCard}>
+            <Image src="/kushal.jpg" alt="Kushal Rastogi" width={300} height={300} />
+          </div>
+        </motion.div>
+        <motion.div className={styles.aboutContent} initial={{ x: 50, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ duration: 1 }}>
+          <p className={styles.aboutText}>I'm a Next.js developer with a passion for building beautiful and functional user experiences.</p>
+        </motion.div>
+      </div>
+
+      {/* Tech Stack */}
+      <motion.div className={styles.techStackCard} initial={{ scale: 0.8, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} transition={{ duration: 1 }}>
+        <p className={styles.techHeading}>My Tech Stack</p>
+        <div className={styles.techGrid}>
+          <span>JavaScript</span>
+          <span>ReactJS</span>
+          <span>Express</span>
+          <span>NextJS</span>
+          <span>NodeJS</span>
+          <span>MongoDB</span>
+        </div>
+      </motion.div>
     </div>
-  );  
+  );
 }
