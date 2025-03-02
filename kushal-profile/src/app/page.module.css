@@ -76,21 +76,23 @@
   align-items: center;
   gap: 30px;
   padding: 20px;
-  
   animation: fadeIn 1.5s ease-in-out;
 }
-/* .aboutGrid , .techStackCard:hover {
-  transform: scale(1.05);
-} */
+
 .imageCard img {
   border-radius: 15px;
-  position: relative;
-  top: 1.5rem;
   transition: transform 0.3s ease;
 }
 
 .imageCard img:hover {
   transform: scale(1.05);
+}
+
+.aboutContent {
+  font-size: 1.2rem;
+  font-family: 'Times New Roman', Times, serif;
+  
+  width: 100%;
 }
 
 /* Tech Stack */
@@ -99,10 +101,10 @@
   border-radius: 10px;
   padding: 30px;
   text-align: center;
-  width: 40%;
+  width: 100%;
   position: relative;
-  top: -16rem;
-  margin-left: 48%;
+  top:1rem;
+  margin: 0 auto;
   animation: zoomIn 1.2s ease-in-out;
 }
 
@@ -112,50 +114,21 @@
   gap: 10px;
   justify-content: center;
 }
+
 .techHeading {
-  /* font-size: 24px; */
-  /* font-weight: bold; */
   margin-bottom: 20px;
   color: rgba(255, 255, 255, 0.8);
 }
+
 .techGrid span {
   background: rgba(89, 89, 89, 0.2);
   padding: 10px 15px;
   border-radius: 5px;
-  font-size: 20px;
+  font-size: 18px;
   color: rgba(255, 255, 255, 0.8);
 }
-.aboutContent {
- position: relative;
-  top: -6rem;
-  width: 90%;
-  margin-left: -10%;
-  /* text-align: left; */
-  font-family: 'Times New Roman', Times, serif;
-  font-size: 1.2rem;
-}
 
-/* Animations */
-@keyframes fadeIn {
-  0% { opacity: 0; transform: translateY(-20px); }
-  100% { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes slideInTop {
-  0% { opacity: 0; transform: translateY(-50px); }
-  100% { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes slideInBottom {
-  0% { opacity: 0; transform: translateY(50px); }
-  100% { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes zoomIn {
-  0% { transform: scale(0.8); opacity: 0; }
-  100% { transform: scale(1); opacity: 1; }
-}
-/*Projects Section*/
+/* Projects Section */
 .projectsContainer {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -211,4 +184,94 @@
 
 .projectLink:hover {
   background: #b086db;
+}
+
+/* Skills Section */
+.skillsContainer {
+  text-align: center;
+  padding: 50px;
+}
+
+.skillsTitle {
+  font-size: 2.5rem;
+  color: white;
+  margin-bottom: 30px;
+  letter-spacing: 2px;
+}
+
+.skillsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.skillCard {
+  background: rgba(91, 90, 90, 0.2);
+  padding: 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+.skillCard:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.05);
+}
+
+.skillHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.arrowIcon {
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+.skillStars {
+  display: flex;
+  justify-content: center;
+  margin: 8px 0;
+}
+
+.starFilled {
+  color: gold;
+  font-size: 1.2rem;
+  margin: 2px;
+}
+
+.starEmpty {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 1.2rem;
+  margin: 2px;
+}
+
+.skillDetails {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.8);
+  overflow: hidden;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(-20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideInTop {
+  0% { opacity: 0; transform: translateY(-50px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideInBottom {
+  0% { opacity: 0; transform: translateY(50px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes zoomIn {
+  0% { transform: scale(0.8); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
 }
