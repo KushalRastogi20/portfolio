@@ -265,7 +265,140 @@
   color: rgba(255, 255, 255, 0.8);
   overflow: hidden;
 }
+.expHeading{
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 10px;
+  color:darkgray
+}
+.experienceDescription{
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 10px 0;
+}
+.experienceTitle{
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 10px;
+  color:pink;
+}
+.experienceCard {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  width: 100%;
+  max-width: 300px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.experienceDate{
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 10px 0;
+}
+.exexperienceCard:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 4px 15px rgba(255, 255, 255, 0.2);
+}
+.experienceImage {
+  border-radius: 10px;
+  width: 100%;
+  /* height: 180px; */
+  object-fit: cover;
+}
+.experienceCompany{
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  margin-left: 4rem;
+}
+/* Footer Section */
 
+.footerLinks {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  /* margin-top: 10px; */
+}
+
+.footerContact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* margin-top: 20px; */
+}
+
+.footerContact p {
+  font-size: 2rem;
+  /* color: rgba(231, 186, 245, 0.7); */
+  margin-bottom: 1rem;
+  /* color: #d1a8ff; */
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s;
+}
+
+.footerContact p:hover {
+  color: #b086db;
+}
+.footerButton{
+  padding: 10px 20px;
+  background-color: #dec2fa;
+  
+  border: none;
+  border-radius: 8px;
+  color: black;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s;
+  margin-top: 20px;
+}
+.footer {
+  /* background-color: #280329; */
+  color: rgba(232, 199, 243, 0.7);
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  /* height: 100%; */
+}
+
+.footer a {
+  /* color: #d1a8ff; */
+  text-decoration: none;
+  margin: 0 10px;
+  margin-bottom: 1rem;
+  transition: color 0.3s;
+}
+
+.footer a:hover {
+  color: #b086db;
+}
+.footerSocial {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.socialIcon {
+  color: #d1a8ff;
+  font-size: 24px;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.socialIcon:hover {
+  color: #b086db;
+  transform: scale(1.5);
+}
 /* Animations */
 @keyframes fadeIn {
   0% { opacity: 0; transform: translateY(-20px); }

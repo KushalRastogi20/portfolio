@@ -2,8 +2,11 @@
 import Image from "next/image";
 import { useState } from "react";
 import { motion,AnimatePresence } from "framer-motion";
-import { FaStar, FaRegStar, FaChevronDown } from "react-icons/fa";
-
+import { FaStar, FaRegStar, FaChevronDown ,FaGithub, FaLinkedin, FaTwitter,FaInstagram} from "react-icons/fa";
+// import {FontAwesomeIcon} from "@fontawesome/react-fontawesome";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faXTwitter } from "@fortawesome/free-brands-svg-icons";
+// import { faTwitter } from "@fortawesome/free-brands-svg-icons";
 import styles from "./page.module.css";
 // import { motion, AnimatePresence } from "framer-motion";
 // const skillsData = [
@@ -113,7 +116,41 @@ export default function Home() {
       link: "https://example.com/project4",
     },
   ];
-
+  const experiences = [
+    {
+      title: "Full Stack Developer",
+      date: "2023 - Present",
+      company: "InDiBus Softwares Solutions PVT LTD",
+      description:
+        // "Developed and maintained web applications with a focus on performance and user experience. Collaborated with designers and backend developers to create seamless and efficient workflows. Implemented best practices for code quality, testing, and deployment.",
+      "Worked as a Full Stack Developer, leading and collaborating on high-performance web apps, ensuring seamless workflows, code quality, and deployment.",
+        image: "/indibus2.jpg",
+    },
+    {
+      title: "Campus Ambassador",
+      date: "2023 - 2024",
+      company: "TechFest IIT Bombay",
+      description:
+        "Represented the college at TechFest IIT Bombay, organizing events and workshops, and promoting the fest among students.",
+        image: "/tf.jpg",
+    },
+    {
+      title: "Campus Ambassador",
+      date: "2023 - 2024",
+      company: "Coding Ninjas",
+      description:
+        "Represented the college at Coding Ninjas, organizing events and workshops, and promoting the fest among students.",
+        image: "/cn.jpg",
+    },
+    // {
+    //   title: "Frontend Developer",
+    //   date: "2019 - Present",
+    //   company: "ABC Company",
+    //   description:
+    //     "Worked on various projects to build responsive and interactive user interfaces using React.js and Next.js.",
+    // },
+  ];
+  
   const [activeIndex, setActiveIndex] = useState(null);
 
   const toggleAccordion = (index) => {
@@ -170,101 +207,55 @@ export default function Home() {
         
       </div>
 
-      {/* <div className={styles.skillsContainer}>
-      <h2 className={styles.skillsTitle}>My Skills</h2>
-      <div className={styles.skillsGrid}>
-        {skillsData.map((skill, index) => (
-          <div
-            key={index}
-            className={styles.skillCard}
-            onClick={() => toggleAccordion(index)}
-          >
-            <h3>{skill.name}</h3>
-            <AnimatePresence>
-              {activeIndex === index && (
-                <motion.p
-                  className={styles.skillDetails}
-                  initial={{ opacity: 0, height: 0 }}
-                  animate={{ opacity: 1, height: "auto" }}
-                  exit={{ opacity: 0, height: 0 }}
+      <div className={styles.skillsContainer}>
+        <h2 className={styles.skillsTitle}>My Skills</h2>
+        <div className={styles.skillsGrid}>
+          {skillsData.map((skill, index) => (
+            <div
+              key={index}
+              className={styles.skillCard}
+              onClick={() => toggleAccordion(index)}
+            >
+              {/* Header with skill name and arrow icon */}
+              <div className={styles.skillHeader}>
+                <h3>{skill.name}</h3>
+                <motion.div
+                  animate={{ rotate: activeIndex === index ? 180 : 0 }}
                   transition={{ duration: 0.3 }}
                 >
-                  {skill.details}
-                </motion.p>
-              )}
-            </AnimatePresence>
-          </div>
-        ))}
-      </div>
-    </div> */}
-    <div className={styles.skillsContainer}>
-      <h2 className={styles.skillsTitle}>My Skills</h2>
-      <div className={styles.skillsGrid}>
-        {skillsData.map((skill, index) => (
-          <div
-            key={index}
-            className={styles.skillCard}
-            onClick={() => toggleAccordion(index)}
-          >
-            {/* Header with skill name and arrow icon */}
-            <div className={styles.skillHeader}>
-              <h3>{skill.name}</h3>
-              <motion.div
-                animate={{ rotate: activeIndex === index ? 180 : 0 }}
-                transition={{ duration: 0.3 }}
-              >
-                <FaChevronDown className={styles.arrowIcon} />
-              </motion.div>
-            </div>
-
-            {/* Star rating */}
-            <div className={styles.skillStars}>
-              {[...Array(5)].map((_, i) =>
-                i < skill.stars ? <FaStar key={i} className={styles.starFilled} /> : <FaRegStar key={i} className={styles.starEmpty} />
-              )}
-            </div>
-
-            {/* Dropdown animation */}
-            <AnimatePresence>
-              {activeIndex === index && (
-                <motion.p
-                  className={styles.skillDetails}
-                  initial={{ opacity: 0, height: 0 }}
-                  animate={{ opacity: 1, height: "auto" }}
-                  exit={{ opacity: 0, height: 0 }}
-                  transition={{ duration: 0.3 }}
-                >
-                  {skill.details}
-                </motion.p>
-              )}
-            </AnimatePresence>
-          </div>
-        ))}
-      </div>
-    </div>
-      {/* Projects */}
-      {/* <motion.div className={styles.projectCard} initial={{ x: -50, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ duration: 1 }}>
-        <p className={styles.projectHeading}>Projects</p>
-        <div className={styles.projectGrid}>
-          {projects.map((project, index) => (
-            <div className={styles.projectCard} key={index}>
-              <div className={styles.projectImage}>
-                <Image src={project.image} alt={project.title} width={300} height={200} />
+                  <FaChevronDown className={styles.arrowIcon} />
+                </motion.div>
               </div>
-              <div className={styles.projectContent}>
-                <h3>{project.title}</h3>
-                <p>{project.description}</p>
-                <a href={project.link} target="_blank" rel="noopener noreferrer">
-                  View Project
-                </a>
+
+              {/* Star rating */}
+              <div className={styles.skillStars}>
+                {[...Array(5)].map((_, i) =>
+                  i < skill.stars ? <FaStar key={i} className={styles.starFilled} /> : <FaRegStar key={i} className={styles.starEmpty} />
+                )}
               </div>
+
+              {/* Dropdown animation */}
+              <AnimatePresence>
+                {activeIndex === index && (
+                  <motion.p
+                    className={styles.skillDetails}
+                    initial={{ opacity: 0, height: 0 }}
+                    animate={{ opacity: 1, height: "auto" }}
+                    exit={{ opacity: 0, height: 0 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    {skill.details}
+                  </motion.p>
+                )}
+              </AnimatePresence>
             </div>
           ))}
         </div>
-        </motion.div> */}
+      </div>
+
       <h2 className={styles.projectHeading1}>A small selection of </h2><h2 className={styles.projectHeading2}>Recent projects</h2>
 
-           <motion.div className={styles.projectsContainer} initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1.2 }}>
+      <motion.div className={styles.projectsContainer} initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1.2 }}>
         {projects.map((project, index) => (
           <motion.div 
             key={index} 
@@ -281,6 +272,61 @@ export default function Home() {
           </motion.div>
         ))}
       </motion.div>
+
+      <h2 className={styles.expHeading}>Experience</h2>
+      <div className={styles.grid}>
+        {experiences.map((exp, index) => (
+          <motion.div
+            key={index}
+            className={styles.experienceCard}
+            initial={{ x: -50, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ duration: 1 }}
+          >
+            {exp.image && (
+              <img src={exp.image} alt={exp.company} className={styles.experienceImage} />
+            )}
+            <p className={styles.experienceTitle}>{exp.title}</p>
+            <p className={styles.experienceDate}>{exp.date}</p>
+            <p className={styles.experienceCompany}>{exp.company}</p>
+            <p className={styles.experienceDescription}>{exp.description}</p>
+          </motion.div>
+        ))}
+      </div>
+
+      {/* Footer Section */}
+      <motion.footer className={styles.footer} initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1 }}>
+        <div className={styles.footerContent}>
+          <div className={styles.footerLinks}>
+            <motion.a href="/KushalRastogiResume(2)(1).pdf" download className={styles.footerButton} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+              Download My Resume
+            </motion.a>
+            <motion.a href="mailto:your-email@example.com" className={styles.footerButton} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+              Contact Me
+            </motion.a>
+          </div>
+          <div className={styles.footerContact}>
+            <a href="mailto:kushalrastogi.kr.2003@gmail.com">Email: kushalrastogi.kr.2003@gmail.com</a>
+            <p>Phone: +91 9026122184</p>
+          </div>
+          <div className={styles.footerSocials}>
+            <motion.a href="https://www.github.com/KushalRastogi20" target="_blank" whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}></motion.a>
+              <FaGithub className={styles.socialIcon} />
+            
+            <motion.a href="https://www.linkedin.com/in/kushal-rastogi-bb1b33259" target="_blank" whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+              <FaLinkedin className={styles.socialIcon} />
+            </motion.a>
+            <motion.a href="https://x.com/mekushalrastogie" target="_blank" whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}></motion.a>
+            <FontAwesomeIcon icon={faXTwitter} className={styles.socialIcon} />
+            
+            <motion.a href="https://www.instagram.com/thekushalrastogi/" target="_blank" whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+              <FaInstagram className={styles.socialIcon} />
+            </motion.a>
+          </div>
+        </div>
+        
+      </motion.footer>
     </div>
+    
   );
 }
