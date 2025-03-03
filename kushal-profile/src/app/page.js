@@ -54,12 +54,12 @@ import styles from "./page.module.css";
 // ];
 const skillsData = [
   // Frontend Skills (⭐ 4)
-  { name: "HTML", category: "Frontend", experience: "Advanced", stars: 4, details: "Structured and semantic web development" },
+  // { name: "HTML", category: "Frontend", experience: "Advanced", stars: 4, details: "Structured and semantic web development" },
   { name: "CSS", category: "Frontend", experience: "Advanced", stars: 4, details: "Responsive design, animations, and styling" },
   { name: "JavaScript", category: "Frontend", experience: "Advanced", stars: 4, details: "ES6+, asynchronous programming, and DOM manipulation" },
   { name: "React.js", category: "Frontend", experience: "Advanced", stars: 4, details: "Component-based architecture and state management" },
   { name: "Next.js", category: "Frontend", experience: "Advanced", stars: 4, details: "SSR, SSG, and optimized React applications" },
-  { name: "Framer Motion", category: "Frontend", experience: "Intermediate", stars: 4, details: "Smooth UI animations and interactions" },
+  // { name: "Framer Motion", category: "Frontend", experience: "Intermediate", stars: 4, details: "Smooth UI animations and interactions" },
 
   // Backend Skills (⭐ 4.5)
   { name: "Node.js", category: "Backend", experience: "Advanced", stars: 4.5, details: "Event-driven architecture and server-side logic" },
@@ -74,7 +74,7 @@ const skillsData = [
 
   // Cloud & Storage (⭐ 4)
   { name: "Cloudinary", category: "Cloud & Storage", experience: "Intermediate", stars: 4, details: "Image and media storage optimization" },
-  { name: "Firebase", category: "Cloud & Storage", experience: "Intermediate", stars: 4, details: "Real-time database and authentication" },
+  // { name: "Firebase", category: "Cloud & Storage", experience: "Intermediate", stars: 4, details: "Real-time database and authentication" },
 
   // DevOps & Tools (⭐ 4)
   { name: "Git", category: "DevOps & Tools", experience: "Advanced", stars: 4, details: "Version control and branching strategies" },
@@ -83,32 +83,32 @@ const skillsData = [
 
   // Styling & UI Libraries (⭐ 4)
   { name: "Tailwind CSS", category: "Styling", experience: "Advanced", stars: 4, details: "Utility-first styling for rapid UI development" },
-  { name: "Bootstrap", category: "Styling", experience: "Intermediate", stars: 4, details: "Pre-styled components for responsive design" },
+  // { name: "Bootstrap", category: "Styling", experience: "Intermediate", stars: 4, details: "Pre-styled components for responsive design" },
 ];
 
 export default function Home() {
   const projects = [
     {
       title: "Molarity",
-      description: "A platform connecting underprivileged individuals with NGOs.",
+      description: "A Next.js platform connecting underprivileged individuals with NGOs.",
       image: "/Molarity.png",
       link: "https://molarity.vercel.app/",
     },
     {
       title: "The OG Gift Shop",
-      description: "A Next.js platform to buy gifts.",
+      description: "A Next.js platform to buy gifts for your loved ones on special occasions.",
       image: "/gift.png",
       link: "https://example.com/project2",
     },
     {
       title: "TechBlog",
-      description: "A Next.js blogging platform for tech enthusiasts.",
+      description: "A Next.js blogging platform for tech enthusiasts to share their thoughts.",
       image: "/bgimg.jpeg",
       link: "https://example.com/project3",
     },
     {
-      title: "Portfolio 2.0",
-      description: "A beautifully animated portfolio using Next.js.",
+      title: "AI Image Generator",
+      description: "A Next.js platform to generate AI-powered images for your projects.", 
       image: "/bgimg.jpeg",
       link: "https://example.com/project4",
     },
@@ -262,7 +262,7 @@ export default function Home() {
           ))}
         </div>
         </motion.div> */}
-      <h2 className={styles.project}>A small selection of recent projects</h2>
+      <h2 className={styles.projectHeading1}>A small selection of </h2><h2 className={styles.projectHeading2}>Recent projects</h2>
 
            <motion.div className={styles.projectsContainer} initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1.2 }}>
         {projects.map((project, index) => (

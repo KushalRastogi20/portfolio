@@ -137,7 +137,17 @@
   padding: 20px;
   justify-items: center;
 }
-
+.projectHeading1{
+  color:darkgray;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 2rem;
+  /* margin-bottom: 1rem; */
+}
+.projectHeading2{
+  color:pink;
+  font-size: 2rem;
+  font-family: 'Times New Roman', Times, serif;
+}
 .projectCard {
   background: rgba(255, 255, 255, 0.1);
   padding: 20px;
@@ -180,6 +190,7 @@
   border-radius: 8px;
   font-weight: bold;
   transition: background 0.3s;
+  margin-top: 2rem;
 }
 
 .projectLink:hover {
