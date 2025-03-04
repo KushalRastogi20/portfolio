@@ -310,21 +310,20 @@ export default function Home() {
             <p>Phone: +91 9026122184</p>
           </div>
           <div className={styles.footerSocials}>
-            <motion.a href="https://www.github.com/KushalRastogi20" target="_blank" whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}></motion.a>
+            <motion.a href="https://github.com/KushalRastogi20" target="_blank" whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
               <FaGithub className={styles.socialIcon} />
-            
+              </motion.a>
             <motion.a href="https://www.linkedin.com/in/kushal-rastogi-bb1b33259" target="_blank" whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
               <FaLinkedin className={styles.socialIcon} />
             </motion.a>
-            <motion.a href="https://x.com/mekushalrastogie" target="_blank" whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}></motion.a>
+            <motion.a href="https://x.com/mekushalrastogi" target="_blank" whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
             <FontAwesomeIcon icon={faXTwitter} className={styles.socialIcon} />
-            
+            </motion.a>
             <motion.a href="https://www.instagram.com/thekushalrastogi/" target="_blank" whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
               <FaInstagram className={styles.socialIcon} />
             </motion.a>
           </div>
         </div>
-        
       </motion.footer>
     </div>
     
