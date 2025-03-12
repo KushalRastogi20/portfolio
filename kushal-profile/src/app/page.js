@@ -58,7 +58,7 @@ import styles from "./page.module.css";
 const skillsData = [
   // Frontend Skills (⭐ 4)
   // { name: "HTML", category: "Frontend", experience: "Advanced", stars: 4, details: "Structured and semantic web development" },
-  { name: "CSS", category: "Frontend", experience: "Advanced", stars: 4, details: "Responsive design, animations, and styling" },
+  // { name: "CSS", category: "Frontend", experience: "Advanced", stars: 4, details: "Responsive design, animations, and styling" },
   { name: "JavaScript", category: "Frontend", experience: "Advanced", stars: 4, details: "ES6+, asynchronous programming, and DOM manipulation" },
   { name: "React.js", category: "Frontend", experience: "Advanced", stars: 4, details: "Component-based architecture and state management" },
   { name: "Next.js", category: "Frontend", experience: "Advanced", stars: 4, details: "SSR, SSG, and optimized React applications" },
@@ -69,14 +69,14 @@ const skillsData = [
   { name: "Express.js", category: "Backend", experience: "Advanced", stars: 4.5, details: "Building RESTful APIs and middleware handling" },
   { name: "MongoDB", category: "Backend", experience: "Advanced", stars: 4.5, details: "NoSQL database design and optimization" },
   { name: "RESTful APIs", category: "Backend", experience: "Advanced", stars: 4.5, details: "Designing and implementing scalable APIs" },
-  { name: "WebSockets", category: "Backend", experience: "Intermediate", stars: 4.5, details: "Real-time communication and event-driven updates" },
+  // { name: "WebSockets", category: "Backend", experience: "Intermediate", stars: 4.5, details: "Real-time communication and event-driven updates" },
 
   // Authentication & Security (⭐ 4)
-  { name: "JWT", category: "Authentication & Security", experience: "Advanced", stars: 4, details: "Token-based authentication and security" },
-  { name: "OAuth", category: "Authentication & Security", experience: "Intermediate", stars: 4, details: "Third-party authentication with OAuth 2.0" },
+  // { name: "JWT", category: "Authentication & Security", experience: "Advanced", stars: 4, details: "Token-based authentication and security" },
+  // { name: "OAuth", category: "Authentication & Security", experience: "Intermediate", stars: 4, details: "Third-party authentication with OAuth 2.0" },
 
   // Cloud & Storage (⭐ 4)
-  { name: "Cloudinary", category: "Cloud & Storage", experience: "Intermediate", stars: 4, details: "Image and media storage optimization" },
+  // { name: "Cloudinary", category: "Cloud & Storage", experience: "Intermediate", stars: 4, details: "Image and media storage optimization" },
   // { name: "Firebase", category: "Cloud & Storage", experience: "Intermediate", stars: 4, details: "Real-time database and authentication" },
 
   // DevOps & Tools (⭐ 4)
@@ -85,7 +85,7 @@ const skillsData = [
   { name: "Postman", category: "DevOps & Tools", experience: "Intermediate", stars: 4, details: "API testing and debugging" },
 
   // Styling & UI Libraries (⭐ 4)
-  { name: "Tailwind CSS", category: "Styling", experience: "Advanced", stars: 4, details: "Utility-first styling for rapid UI development" },
+  // { name: "Tailwind CSS", category: "Styling", experience: "Advanced", stars: 4, details: "Utility-first styling for rapid UI development" },
   // { name: "Bootstrap", category: "Styling", experience: "Intermediate", stars: 4, details: "Pre-styled components for responsive design" },
 ];
 
