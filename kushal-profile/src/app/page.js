@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { Send } from 'lucide-react';
 import { 
   FaStar, 
   FaRegStar, 
@@ -30,28 +31,28 @@ export default function Portfolio() {
     {
       title: "Molarity",
       description: "A Next.js platform connecting underprivileged individuals with NGOs.",
-      image: "/Molarity.png",
+      image: "/molarity.png",
       link: "https://molarity.vercel.app/",
       tech: ["Next.js", "MongoDB", "Tailwind CSS"]
     },
     {
       title: "The OG Gift Shop",
       description: "A Next.js platform to buy gifts for your loved ones on special occasions.",
-      image: "/gift.png",
+      image: "/ecom.jpg",
       link: "https://example.com/project2",
       tech: ["Next.js", "React", "Node.js"]
     },
     {
       title: "TechBlog",
       description: "A Next.js blogging platform for tech enthusiasts to share their thoughts.",
-      image: "/bgimg.jpeg",
+      image: "/techblog.jpg",
       link: "https://example.com/project3",
       tech: ["Next.js", "Express", "MongoDB"]
     },
     {
       title: "AI Image Generator",
       description: "A Next.js platform to generate AI-powered images for your projects.", 
-      image: "/bgimg.jpeg",
+      image: "/image_gen.jpg",
       link: "https://example.com/project4",
       tech: ["Next.js", "OpenAI API", "Tailwind CSS"]
     },
@@ -87,18 +88,34 @@ export default function Portfolio() {
   
   // Skills data
   const skillsData = [
-    { name: "JavaScript", category: "Frontend", experience: "Advanced", stars: 4, details: "ES6+, asynchronous programming, and DOM manipulation" },
-    { name: "React.js", category: "Frontend", experience: "Advanced", stars: 4, details: "Component-based architecture and state management" },
-    { name: "Next.js", category: "Frontend", experience: "Advanced", stars: 4, details: "SSR, SSG, and optimized React applications" },
+    { name: "JavaScript", category: "Frontend", experience: "Advanced", stars: 5, details: "ES6+, asynchronous programming, and DOM manipulation" },
+    { name: "React.js", category: "Frontend", experience: "Advanced", stars: 5, details: "Component-based architecture and state management" },
+    { name: "Next.js", category: "Frontend", experience: "Advanced", stars: 5, details: "SSR, SSG, and optimized React applications" },
     { name: "Node.js", category: "Backend", experience: "Advanced", stars: 4.5, details: "Event-driven architecture and server-side logic" },
-    { name: "Express.js", category: "Backend", experience: "Advanced", stars: 4.5, details: "Building RESTful APIs and middleware handling" },
-    { name: "MongoDB", category: "Backend", experience: "Advanced", stars: 4.5, details: "NoSQL database design and optimization" },
-    { name: "RESTful APIs", category: "Backend", experience: "Advanced", stars: 4.5, details: "Designing and implementing scalable APIs" },
+    { name: "Express.js", category: "Backend", experience: "Advanced", stars: 5, details: "Building RESTful APIs and middleware handling" },
+    { name: "MongoDB", category: "Backend", experience: "Advanced", stars: 5, details: "NoSQL database design and optimization" },
+    { name: "RESTful APIs", category: "Backend", experience: "Advanced", stars: 5, details: "Designing and implementing scalable APIs" },
     { name: "Git", category: "DevOps & Tools", experience: "Advanced", stars: 4, details: "Version control and branching strategies" },
     { name: "GitHub", category: "DevOps & Tools", experience: "Advanced", stars: 4, details: "Repository management and collaboration" },
     { name: "Postman", category: "DevOps & Tools", experience: "Intermediate", stars: 4, details: "API testing and debugging" },
   ];
-  
+  //contact form state
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleSubmit = () => {
+    console.log({ name, email, message });
+    setSubmitted(true);
+    // Reset after submission
+    setTimeout(() => {
+      setName('');
+      setEmail('');
+      setMessage('');
+      setSubmitted(false);
+    }, 3000);
+  };
   // Group skills by category
   const skillCategories = {};
   skillsData.forEach(skill => {
@@ -223,7 +240,7 @@ export default function Portfolio() {
           id="home" 
           className="min-h-screen flex items-center"
         >
-          <div className="container mx-auto px-6 py-20">
+          <div className="container mx-auto px-10 ">
             <motion.div 
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -304,7 +321,7 @@ export default function Portfolio() {
           id="about" 
           className="py-20 bg-gray-950"
         >
-          <div className="container mx-auto px-6">
+          <div className="container mx-auto px-8"> 
             <motion.div 
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
@@ -411,8 +428,9 @@ export default function Portfolio() {
                 viewport={{ once: true }}
                 className="bg-gray-800/50 backdrop-blur-md rounded-2xl p-6 border border-gray-700 shadow-lg"
               >
-                <h3 className="text-2xl font-bold mb-4">My Tech Stack</h3>
-                <div className="grid grid-cols-3 gap-4">
+                
+                {/* <h3 className="text-2xl font-bold mb-4">My Tech Stack</h3>
+                <div className="grid grid-cols-3 gap-4 ">
                   {["JavaScript", "ReactJS", "NextJS", "NodeJS", "Express", "MongoDB", "Git", "RESTful APIs", "Tailwind CSS"].map((tech, index) => (
                     <motion.div 
                       key={index}
@@ -422,7 +440,129 @@ export default function Portfolio() {
                       <span className="text-gray-200">{tech}</span>
                     </motion.div>
                   ))}
+                </div> */}
+                <div className="space-y-12">
+                {/* Animated Quote */}
+                <motion.div
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8 }}
+                  className="text-xl italic text-gray-300 text-center mb-8 border-t border-gray-700 pt-4 "
+                >
+                  {/* "Code is like humor. When you have to explain it, it ’ s bad." – Cory House
+                   */}
+                   "Code is like humor. When you have to explain it, it's bad." - Cory House
+
+                </motion.div>
+
+                {/* Tech Stack */}
+                <div>
+                  <h3 className="text-2xl font-bold mb-4">My Tech Stack</h3>
+                  <div className="grid grid-cols-3 gap-4">
+                    {[
+                      "JavaScript",
+                      "ReactJS",
+                      "NextJS",
+                      "NodeJS",
+                      "Express",
+                      "MongoDB",
+                      "Git",
+                      "RESTful APIs",
+                      "Tailwind CSS",
+                    ].map((tech, index) => (
+                      <motion.div
+                        key={index}
+                        whileHover={{ scale: 1.05 }}
+                        className="bg-gray-700/40 border border-gray-600 rounded-lg p-3 flex items-center justify-center text-center"
+                      >
+                        <span className="text-gray-200">{tech}</span>
+                      </motion.div>
+                    ))}
+                  </div>
                 </div>
+
+                {/* Certificates & Achievements */}
+                {/* <div>
+                  <h3 className="text-2xl font-bold mb-4">Certificates & Achievements</h3>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    {[
+                      {
+                        title: "Frontend Developer Certification",
+                        issuer: "freeCodeCamp",
+                        year: "2023",
+                      },
+                      {
+                        title: "JavaScript Algorithms and Data Structures",
+                        issuer: "freeCodeCamp",
+                        year: "2022",
+                      },
+                      {
+                        title: "React Developer Certificate",
+                        issuer: "Meta (Coursera)",
+                        year: "2023",
+                      },
+                      {
+                        title: "Contributor – Open Source Project",
+                        issuer: "Hacktoberfest",
+                        year: "2022",
+                      },
+                    ].map((cert, index) => (
+                      <motion.div
+                        key={index}
+                        initial={{ opacity: 0, y: 10 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.5, delay: index * 0.1 }}
+                        viewport={{ once: true }}
+                        className="bg-gray-800 border border-gray-600 rounded-lg p-4"
+                      >
+                        <h4 className="text-lg font-semibold text-gray-100">{cert.title}</h4>
+                        <p className="text-sm text-gray-400">{cert.issuer} — {cert.year}</p>
+                      </motion.div>
+                    ))}
+                  </div>
+                </div> */}
+                <div>
+                  <h3 className="text-2xl font-bold mb-4">Certificates & Achievements</h3>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 bg-gray-800/50 backdrop-blur-md rounded-lg p-4 border border-gray-700 shadow-lg">
+                    {[
+                      {
+                        title: "Frontend Developer Certification",
+                        issuer: "freeCodeCamp",
+                        year: "2023",
+                      },
+                      {
+                        title: "JavaScript Algorithms and Data Structures",
+                        issuer: "freeCodeCamp",
+                        year: "2022",
+                      },
+                      {
+                        title: "React Developer Certificate",
+                        issuer: "Meta (Coursera)",
+                        year: "2023",
+                      },
+                      {
+                        title: "Contributor - Open Source Project",
+                        issuer: "Hacktoberfest",
+                        year: "2022",
+                      },
+                    ].map((cert, index) => (
+                      <motion.div
+                        key={index}
+                        initial={{ opacity: 0, y: 10 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.5, delay: index * 0.1 }}
+                        viewport={{ once: true }}
+                        className="bg-gray-900 border border-gray-700 rounded-lg p-4 transition-all duration-300 hover:bg-gray-800 hover:shadow-lg"
+                      >
+                        <h4 className="text-base font-semibold text-gray-200">{cert.title}</h4>
+                        <p className="text-sm text-gray-400">{cert.issuer} - {cert.year}</p>
+                      </motion.div>
+                    ))}
+                  </div>
+                </div>
+
+              </div>
+
               </motion.div>
             </div>
           </div>
@@ -630,7 +770,7 @@ export default function Portfolio() {
               <h3 className="text-3xl md:text-4xl font-bold">Professional Journey</h3>
             </motion.div>
             
-            <div className="max-w-4xl mx-auto">
+            <div className="max-w-4xl mx-auto ">
               <div className="relative pl-8 border-l-2 border-gray-700 space-y-10">
                 {experiences.map((exp, index) => (
                   <motion.div 
@@ -668,13 +808,13 @@ export default function Portfolio() {
                 ))}
               </div>
               
-              <motion.div 
+              {/* <motion.div 
                 initial={{ opacity: 0, x: 30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8 }}
                 viewport={{ once: true }}
               >
-                <div className="bg-gray-800/60 backdrop-blur-sm rounded-xl p-8 border border-gray-700 shadow-lg h-full">
+                <div className="bg-gray-800/60 backdrop-blur-sm rounded-xl p-12 border border-gray-700 shadow-lg h-full">
                   <h3 className="text-2xl font-bold mb-6">Send Me a Message</h3>
                   
                   <form className="space-y-6">
@@ -720,7 +860,61 @@ export default function Portfolio() {
                     </div>
                   </form>
                 </div>
-              </motion.div>
+              </motion.div> */}
+              <div className="py-16 w-full max-w-3xl mx-auto">
+      {/* Added proper spacing to prevent overlap */}
+                <div className="bg-gray-800/60 backdrop-blur-sm rounded-xl p-8 md:p-12 border border-gray-700 shadow-lg mt-8">
+                  <h3 className="text-2xl font-bold mb-6 text-white">Send Me a Message</h3>
+                  
+                  <div className="space-y-6">
+                    <div>
+                      <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-1">Name</label>
+                      <input 
+                        type="text" 
+                        id="name" 
+                        className="w-full bg-gray-700/50 border border-gray-600 rounded-lg py-3 px-4 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition"
+                        placeholder="Your name"
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
+                      />
+                    </div>
+                    
+                    <div>
+                      <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-1">Email</label>
+                      <input 
+                        type="email" 
+                        id="email" 
+                        className="w-full bg-gray-700/50 border border-gray-600 rounded-lg py-3 px-4 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition"
+                        placeholder="Your email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                      />
+                    </div>
+                    
+                    <div>
+                      <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-1">Message</label>
+                      <textarea 
+                        id="message" 
+                        rows={4} 
+                        className="w-full bg-gray-700/50 border border-gray-600 rounded-lg py-3 px-4 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition"
+                        placeholder="Your message"
+                        value={message}
+                        onChange={(e) => setMessage(e.target.value)}
+                      ></textarea>
+                    </div>
+                    
+                    <div>
+                      <button 
+                        onClick={handleSubmit}
+                        className="w-full bg-gradient-to-r from-blue-500 to-purple-600 text-white font-medium py-3 px-6 rounded-lg shadow-lg hover:shadow-blue-500/40 transition-all flex items-center justify-center"
+                      >
+                        {submitted ? 'Message Sent!' : 'Send Message'}
+                        {!submitted && <Send className="ml-2 h-5 w-5" />}
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                </div>
             </div>
           </div>
         </section>
