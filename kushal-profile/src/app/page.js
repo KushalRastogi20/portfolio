@@ -288,7 +288,7 @@ export default function Portfolio() {
                   <div className="rounded-full overflow-hidden border-4 border-blue-500/30 shadow-xl shadow-blue-500/20">
                     <div className="rounded-full overflow-hidden w-full  bg-gradient-to-b from-blue-500/20 to-purple-500/20 p-1">
                       <img 
-                        src="/Kushalppic.jpg" 
+                        src="/kushal.png" 
                         alt="Kushal Rastogi" 
                         className="w-full h-90 object-cover rounded-full"
                       />
